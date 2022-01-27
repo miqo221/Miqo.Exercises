@@ -1,0 +1,238 @@
+html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .main {
+            display: flex;
+            width: 100%;
+            border: 1px solid black;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .right {
+            border-left: 1px solid black;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bolder;
+            padding: 10px;
+        }
+
+        .left {
+            width: 100%;
+        }
+
+        .header {
+            height: 80px;
+            border-bottom: 1px solid black;
+            display: flex;
+        }
+
+        .footer {
+            height: 80px;
+            border-top: 1px solid black;
+        }
+
+        .numbers {
+            height: calc(100% - 162px);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            overflow: auto;
+            margin-left: 20%;
+            align-items: flex-start;
+        }
+
+        .card {
+            width: 35%;
+            height: 30%;
+            border: 1px solid black;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            font-weight: bolder;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .newCard {
+            width: 35%;
+            height: 30%;
+            border: 1px solid black;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bolder;
+            position: relative;
+        }
+        .inHeader {
+            margin: 17px 40px;          
+            background-color: #fafffb; 
+            border: 2px solid blue;
+            color: rgb(0, 0, 0);
+            padding: 12px 16px 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .inHeader:hover {
+            background-color: blue;
+            color: white;
+        }
+        .inFooter {
+            margin: 17px 40px;         
+        }
+        .closebtn {
+            float: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 2%;
+            top: 1%;
+            color: #000;
+        }
+        .closebtn:hover {
+              color: red;
+          }
