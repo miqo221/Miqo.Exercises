@@ -1,7 +1,5 @@
 
 let array = [];
-let number = 0;
-let id = "";
 
 function randomNumberGenerator(min = 1, max = 1000) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -15,9 +13,25 @@ function sortArray() {
     array = array.sort((a, b) => { return a.value - b.value });
 }
 
-function createDiv() {
-    number = randomNumberGenerator(1, 1000);
-    id = randomIdGenerator();
+function createCard() {
+    const randomNumber = randomNumberGenerator(1, 1000);
+    const randomId = randomIdGenerator();
+  
+    createDiv(randomId, randomNumber);
+    addCardData(randomId, randomNumber);
+
+}
+
+function addCardData(id, number) {
+    const data = {
+        id: id,
+        value: number,
+    };
+
+    array.push(data);
+}
+
+function createDiv(id, number) {
     const newCard = document.createElement('div');
     newCard.classList.add("card");
     newCard.innerHTML = number;
@@ -32,23 +46,14 @@ function createDiv() {
     function clickHandler() {
         newCard.parentElement.removeChild(newCard);
         const divID = this.parentNode.id;
+        console.log(divID);
         for (let j = 0; j < array.length; j++) {
             if (array[j].id === divID) {
-                array.splice(array[j], 1);
+               array.splice(j, 1);
             }
         }
     };
 
-    const cardObject = {
-        id: id,
-        value: number,
-    };
-
-    array.push(cardObject);
-}
-
-function addCard() {
-    createDiv()
 }
 
 
@@ -63,30 +68,18 @@ function removeDom() {
 
 function removeAll() {
     removeDom();
-    array.length = 0;
+    array = [];
 }
 
-function sortDivs() {
-    sortArray();
+function sortCards() {
     removeDom();
-    for (let j = 0; j < array.length; j++) {
-        let divs = document.createElement('div');
-        divs.classList.add("card");
-        divs.innerHTML = array[j].value;
-        document.querySelector('.numbers').appendChild(divs);
-        const closeButton = document.createElement('p');
-        closeButton.classList.add('closebtn');
-        closeButton.innerHTML = '&times';
-        divs.appendChild(closeButton);
-        closeButton.addEventListener("click", clickHandler);
-        function clickHandler() {
-            divs.parentElement.removeChild(divs);
-            const divID = this.parentNode.id;
-            for (let j = 0; j < array.length; j++) {
-                if (array[j].id === divID) {
-                    array.splice(array[j], 1);
-                }
-            }
-        };
+    sortArray();
+    createDivsFromArray();
+}
+
+function createDivsFromArray() {
+    for (let i = 0; i < array.length; i++) {
+        const data = array[i];
+        createDiv(data.id, data.value);
     }
 }
