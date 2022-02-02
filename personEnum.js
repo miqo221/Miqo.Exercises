@@ -29,9 +29,9 @@ const eleven = Person("Vazgen", "Minasyan", 23, professionEnum.Developer);
 
 const personArray = [one, two, three, four, five, six, seven, eight, nine, ten, eleven];
 
-let newArray = [];
-let little = [];
-let result = [];  
+const newArray = [];
+const little = [];
+const result = [];  
 
 function findByName(name) {
     for(let i = 0; i < personArray.length; i++) {
@@ -40,10 +40,8 @@ function findByName(name) {
         }
     }
     console.log(newArray) + console.log('All Employess with the name "Vazgen".');
-    checkAdult(25)
+    return newArray
 }
-
-findByName("Vazgen")
 
 
 function checkAdult(age) {
@@ -53,9 +51,8 @@ function checkAdult(age) {
         }
     }
     console.log(little) + console.log('Young Employees');
-    checkProffesion(professionEnum.Developer)
+    return little
 }
-
 
 
 function checkProffesion(work) {
@@ -65,4 +62,6 @@ function checkProffesion(work) {
         }
     }
     console.log(result) + console.log('Developers.');
+    return result
 }
+
