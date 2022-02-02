@@ -29,35 +29,38 @@ const eleven = Person("Vazgen", "Minasyan", 23, professionEnum.Developer);
 
 const personArray = [one, two, three, four, five, six, seven, eight, nine, ten, eleven];
 
-let vazgens = [];
-
-function findVazgen() {
-    for (let i = 0; i < personArray.length; i++) {
-        if (personArray[i].firstName === "Vazgen") {
-            vazgens.push(personArray[i]);
-        }
-    }
-    console.log(vazgens) + console.log('All Employess with the name "Vazgen".');
-    checkAdult()
-}
-
+let newArray = [];
 let little = [];
-
-function checkAdult() {
-    for(let i = 0; i < vazgens.length; i++) {
-       if(vazgens[i].age < 25) {
-        little.push(vazgens[i])
-       }
-    }
-    console.log(little) + console.log('Employees younger than 25 years.');
-    checkProffesion()
-  }
-
 let result = [];  
 
-function checkProffesion() {
+function findByName(name) {
+    for(let i = 0; i < personArray.length; i++) {
+        if (personArray[i].firstName == name) {
+            newArray.push(personArray[i]);
+        }
+    }
+    console.log(newArray) + console.log('All Employess with the name "Vazgen".');
+    checkAdult(25)
+}
+
+findByName("Vazgen")
+
+
+function checkAdult(age) {
+    for (let i = 0; i < newArray.length; i++) {
+        if (newArray[i].age < age) {
+            little.push(newArray[i])
+        }
+    }
+    console.log(little) + console.log('Young Employees');
+    checkProffesion(professionEnum.Developer)
+}
+
+
+
+function checkProffesion(work) {
     for(let i = 0; i < little.length; i++) {
-        if (little[i].profession == professionEnum.Developer) {
+        if (little[i].profession == work) {
             result.push(little[i])
         }
     }
